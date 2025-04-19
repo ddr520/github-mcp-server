@@ -2,11 +2,11 @@ name: github-mcp-server
 
 services:
   mcp:
-    image: node:18
     build:
-      command: npm install && npm run build
+      base: node:18
+      install: npm install
     run:
-      command: npm start
+      command: npm run start
     env:
       PORT: 3000
       NODE_ENV: production
